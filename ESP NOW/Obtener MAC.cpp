@@ -3,8 +3,12 @@
 
 void setup() {
   Serial.begin(115200);
+  
   delay(1000);
 
+  while(!Serial){
+    delay(10);
+  }
   // Inicializa WiFi en modo estación (necesario para ESP-NOW)
   WiFi.mode(WIFI_STA);
 
